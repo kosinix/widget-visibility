@@ -63,11 +63,11 @@ GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-= 1.0.0 - 2014-08-07 =
+= 1.0.0 - 2014-08-08 =
 * Initial commit.
 
 
 == Upgrade Notice ==
 
-= 1.0.0 - 2014-08-07 =
+= 1.0.0 - 2014-08-08 =
 * Initial commit.

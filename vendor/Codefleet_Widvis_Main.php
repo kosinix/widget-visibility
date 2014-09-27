@@ -51,8 +51,26 @@ class Codefleet_Widvis_Main {
 	* Insert admin form in widgets
 	**/
 	public function in_widget_form( $widget, $return, $instance ){
-		
+	
 		$this->view->set_view_file( WIDVIS_PATH . 'views/widget-admin.php' );
+		
+		$widvis_conditions = array(
+			'action'=>'',
+			'rules'=>array(
+				'main'=>array(),
+				'page'=>array(),
+				'cat'=>array(),
+				'author'=>array(),
+				'tag'=>array(),
+				'archive'=>array()
+			)
+		);
+		
+		if(isset($instance['widvis_conditions'])){
+			$instance['widvis_conditions']['rules'] = wp_parse_args($instance['widvis_conditions']['rules'], $widvis_conditions['rules']); // Apply defaults so keys are not missing and prevent notice
+		} else {
+			$instance['widvis_conditions'] = $widvis_conditions;
+		}
 		
 		$categories = get_categories( array( 'number' => 1000, 'orderby' => 'count', 'order' => 'DESC' ) );
 		$authors = get_users( array( 'orderby' => 'display_name' ) );
@@ -66,7 +84,7 @@ class Codefleet_Widvis_Main {
 		$vars['pages'] = $pages;
 		$vars['instance'] = $instance;
 		$vars['widvis'] = $this;
-
+		
 		$vars['pages_list'] = $this->pages_list;
 		$vars['categories_list'] = $this->categories_list;
 		
@@ -286,7 +304,7 @@ class Codefleet_Widvis_Main {
 				foreach ( $widgets as $position => $widget_id ) {
 					
 					$last_dash_pos = strrpos($widget_id, '-');
-					if( false !== $last_dash ) {
+					if( false !== $last_dash_pos ) {
 						$basename = substr($widget_id, 0, $last_dash_pos); // Examples: "text-2" will return "text", "recent-post-2" will return "recent-post"
 						$index = substr($widget_id, $last_dash_pos+1); // Examples: "text-2" will return "2", "recent-post-2" will return "2"
 						
