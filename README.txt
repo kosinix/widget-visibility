@@ -3,8 +3,8 @@ Contributors: kosinix
 Donate link: http://www.codefleet.net/donate/
 Tags: widget, visibility, appear
 Requires at least: 3.5
-Tested up to: 3.9.1
-Stable tag: 1.0.0
+Tested up to: 4.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,8 +66,14 @@ GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
 = 1.0.0 - 2014-08-08 =
 * Initial commit.
 
+= 1.0.1 - 2014-09-28 =
+* Fix notice warnings and typo.
+
 
 == Upgrade Notice ==
 
 = 1.0.0 - 2014-08-08 =
 * Initial commit.
+
+= 1.0.1 - 2014-09-28 =
+* Fix notice warnings and typo.
