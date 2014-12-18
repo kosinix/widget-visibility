@@ -1,34 +1,20 @@
 <?php
 
 /**
-* Main plugin class
+* Admin class
 */
 
-class Codefleet_Widvis_Main {
-    
-    const VERSION = '1.0.0'; // Plugin version. Must match the version in the header comment of the main plugin file.
-    const DEBUG = false; // Set to true to enable debug mode
-    const ID = 'widvis'; // Unique identifier for plugin
-    const SLUG = 'widvis'; // Slug used in URL
-    const TEXTDOMAIN = 'widvis'; // For i8n
-
-    protected $view; // Template view renderer instance
+class Widvis_Admin extends WidVis_Base {
     
     protected $pages_list;
     protected $categories_list;
     
-	/*
-	* Constructor
-	**/
-	public function __construct( $view ) {
-		// Assign dependencies
-		$this->view = $view;
+	public function bootstrap() {
 		
 		// Add all hooks and filters
 		if(is_admin()){
 			add_action('sidebar_admin_setup', array($this, 'register_admin_scripts' ), 10);
 			add_action('in_widget_form', array($this, 'in_widget_form'), 10, 3);
-			add_action('plugins_loaded', array($this, 'plugins_loaded'));
 			add_filter('widget_update_callback', array( $this, 'widget_update' ), 10, 3 );
 			
 			$this->pages_list = array();
@@ -44,7 +30,7 @@ class Codefleet_Widvis_Main {
 	* Add our custom CSS
 	**/
     public function register_admin_scripts(){
-		wp_enqueue_style( 'widvis-css', WIDVIS_URL.'css/admin.css', array(), self::VERSION );
+		wp_enqueue_style( 'widvis-css', $this->plugin['url'].'css/admin.css', array(), $this->plugin['version'] );
 	}
 	
 	/*
@@ -52,8 +38,6 @@ class Codefleet_Widvis_Main {
 	**/
 	public function in_widget_form( $widget, $return, $instance ){
 	
-		$this->view->set_view_file( WIDVIS_PATH . 'views/widget-admin.php' );
-		
 		$widvis_conditions = array(
 			'action'=>'',
 			'rules'=>array(
@@ -88,17 +72,10 @@ class Codefleet_Widvis_Main {
 		$vars['pages_list'] = $this->pages_list;
 		$vars['categories_list'] = $this->categories_list;
 		
-		$vars['textdomain'] = self::TEXTDOMAIN;
-		$this->view->set_vars( $vars );
-		$this->view->render();
+		$vars['textdomain'] = $this->plugin['textdomain'];
 		
-	}
-	
-	/*
-	* Load language
-	**/
-	public function plugins_loaded(){
-		load_plugin_textdomain( self::TEXTDOMAIN, false, basename(WIDVIS_PATH).'/languages' );
+		$this->plugin['view']->render( 'widget-admin.php', $vars );
+		
 	}
 	
 	/*
@@ -350,7 +327,7 @@ class Codefleet_Widvis_Main {
 			foreach($pages as $page){
 				$holder = (array) $page; // Cast as array
 				if(empty($holder['post_title'])){
-					$holder['post_title'] = __('(No Title)', self::TEXTDOMAIN);
+					$holder['post_title'] = __('(No Title)', $this->plugin['textdomain']);
 				}
 				$holder['level'] = $level;
 				$flattened_list[] = $holder;
@@ -383,7 +360,7 @@ class Codefleet_Widvis_Main {
 			foreach($categories as $category){
 				$holder = (array) $category; // Cast as array
 				if(empty($holder['name'])){
-					$holder['name'] = __('(No Title)', self::TEXTDOMAIN);
+					$holder['name'] = __('(No Title)', $this->plugin['textdomain']);
 				}
 				$holder['level'] = $level;
 				$flattened_list[] = $holder;

@@ -1,8 +1,8 @@
 <?php if(!defined('ABSPATH')) die('Direct access denied.'); ?>
+
 <div class="widvis">
 	<p><?php _e('Widget Visibility', $textdomain); ?></p>
 	<p>
-		
 		<select name="<?php echo $widget->get_field_name('widvis_conditions'); ?>[action]" id="<?php echo $widget->get_field_id('widvis_show_time'); ?>">
 			<option <?php $widvis->in_array_selected($instance['widvis_conditions']['action'], 'show') ?> value="show"><?php _e('Show only', $textdomain); ?></option>
 			<option <?php $widvis->in_array_selected($instance['widvis_conditions']['action'], 'hide') ?> value="hide"><?php _e('Hide', $textdomain); ?></option>
@@ -66,7 +66,7 @@
 			<div class="widvis-body">
 				<p>
 					<input type="checkbox" <?php $widvis->in_array_checked($instance['widvis_conditions']['rules']['author'], 'all') ?> id="<?php echo $widget->get_field_id('widvis_author_all'); ?>" name="<?php echo $widget->get_field_name('widvis_conditions'); ?>[rules][author][]" value="all" />
-					<label for="<?php echo $widget->get_field_id('widvis_author_all'); ?>">All Authors</label>
+					<label for="<?php echo $widget->get_field_id('widvis_author_all'); ?>"><?php _e('All Authors', $textdomain); ?></label>
 				</p>
 				<?php foreach($authors as $i=>$author):?>
 					<p>
@@ -81,7 +81,7 @@
 			<div class="widvis-body">
 				<p>
 					<input type="checkbox" <?php $widvis->in_array_checked($instance['widvis_conditions']['rules']['tag'], $author->ID) ?> id="<?php echo $widget->get_field_id('widvis_tag_all'); ?>" name="<?php echo $widget->get_field_name('widvis_conditions'); ?>[rules][tag][]" value="all" />
-					<label for="<?php echo $widget->get_field_id('widvis_tag_all'); ?>">All Tags</label>
+					<label for="<?php echo $widget->get_field_id('widvis_tag_all'); ?>"><?php _e('All Tags', $textdomain); ?></label>
 				</p>
 				<?php foreach($tags as $i=>$tag):?>
 					<p>
