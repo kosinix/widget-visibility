@@ -16,11 +16,10 @@ A simple and easy way to control which pages your widgets appear. You can show o
 
 Why should you use this plugin?
 
-* Lightweight - just a few KB.
+* Works in WordPress customizer!
 * Translation ready - A must have for non-english speakers.
 * Fewer clicks saves time - Useful when dealing with many widgets.
 * Follows the [WordPress hierarchy](http://codex.wordpress.org/images/1/18/Template_Hierarchy.png) for the visibility logic.
-* Works in WordPress customizer!
 
 = Link =
 * [Widget Visibility Home Page](http://www.codefleet.net/widget-visibility/)
