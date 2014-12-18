@@ -65,6 +65,7 @@ GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
 
 = 1.2.0 - 2014-12-18 =
 * Use better codebase.
+* Added top border to differentiate widget visibility controls from the rest of the widget.
 
 = 1.0.1 - 2014-09-28 =
 * Fix notice warnings and typo.
@@ -79,6 +80,7 @@ GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
 
 = 1.2.0 - 2014-12-18 =
 * Use better codebase.
+* Added top border to differentiate widget visibility controls from the rest of the widget.
 
 = 1.0.1 - 2014-09-28 =
 * Fix notice warnings and typo.
