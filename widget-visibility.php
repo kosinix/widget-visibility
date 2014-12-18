@@ -31,6 +31,7 @@ function widvis_init() {
     $plugin['path'] = realpath(plugin_dir_path(__FILE__)) . DIRECTORY_SEPARATOR;
     $plugin['url'] = plugin_dir_url(__FILE__);
 	$plugin['textdomain'] = 'widvis';
+    $plugin['slug'] = 'widget-visibility/widget-visibility.php';
     
     load_plugin_textdomain( $plugin['textdomain'], false, basename(dirname(__FILE__)).'/languages' ); // Load language files
     

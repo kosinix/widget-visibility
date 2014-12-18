@@ -13,9 +13,10 @@ class Widvis_Admin extends WidVis_Base {
 		
 		// Add all hooks and filters
 		if(is_admin()){
-			add_action('sidebar_admin_setup', array($this, 'register_admin_scripts' ), 10);
-			add_action('in_widget_form', array($this, 'in_widget_form'), 10, 3);
-			add_filter('widget_update_callback', array( $this, 'widget_update' ), 10, 3 );
+			add_filter( 'plugin_action_links', array( $this, 'settings_link' ), 10, 2 ); // Add link in WP plugins screen
+			add_action( 'sidebar_admin_setup', array($this, 'register_admin_scripts' ), 10);
+			add_action( 'in_widget_form', array($this, 'in_widget_form'), 10, 3);
+			add_filter( 'widget_update_callback', array( $this, 'widget_update' ), 10, 3 );
 			
 			$this->pages_list = array();
 			$this->categories_list = array();
@@ -25,7 +26,19 @@ class Widvis_Admin extends WidVis_Base {
 			add_action( 'sidebars_widgets', array( $this, 'sidebars_widgets' ) );
 		}
 	}
+	
+	/**
+    * Add a "Settings" link on the plugins page 
+    */
+    public function settings_link( $links, $file ) {
 
+        if ( $this->plugin['slug'] == $file ) {
+            $links[] = '<a href="' . admin_url( 'widgets.php' ) . '">' . __( 'Widgets', $this->plugin['textdomain'] ) . '</a>';
+        }
+
+        return $links;
+    }
+	
     /*
 	* Add our custom CSS
 	**/
