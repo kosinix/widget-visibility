@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Widget Visibility\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-18 21:10+0800\n"
-"PO-Revision-Date: 2014-12-18 21:10+0800\n"
+"POT-Creation-Date: 2014-12-18 21:33+0800\n"
+"PO-Revision-Date: 2014-12-18 21:34+0800\n"
 "Last-Translator: Nico Amarilla <kosinix@codefleet.net>\n"
 "Language-Team: kosinix <kosinix@codefleet.net>\n"
 "Language: en_US\n"
@@ -17,7 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../src/WidVis/Admin.php:330 ../src/WidVis/Admin.php:363
+#: ../src/WidVis/Admin.php:36
+msgid "Widgets"
+msgstr ""
+
+#: ../src/WidVis/Admin.php:343 ../src/WidVis/Admin.php:376
 msgid "(No Title)"
 msgstr ""
 
