@@ -212,21 +212,21 @@ class Widvis_Admin extends WidVis_Base {
 				
 			}
 		}
-		
+
 		// Tag
 		if(isset($rules['tag'])){
 			if( in_array('all', $rules['tag']) ){
-				if(is_singular()){ 
+				if(is_tag()){
 					$result = true;
 				}
 			} else {
 				foreach($rules['tag'] as $tag_id){
-					if(is_singular() and has_tag($tag_id) ){ // Check if its a post with this tag
+					if(is_tag($tag_id)){ // Check if its in a tag archive under this tag
 						$result = true;
 						break;
 					}
 				}
-				
+
 			}
 		}
 		
