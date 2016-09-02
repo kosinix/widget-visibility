@@ -28,6 +28,7 @@ function widvis_init() {
     $plugin['slug'] = 'widvis_service_plugin_slug';
     $plugin['view'] = new WidVis_View( $plugin['view_folder'] );
     $plugin['admin'] = 'widvis_service_admin';
+    $plugin['deactivate'] = new WidVis_Deactivate($plugin['textdomain'], $plugin['slug'], $plugin['view']);
 
     load_plugin_textdomain( $plugin['textdomain'], false, basename(dirname(__FILE__)).'/languages/' ); // Load language files
 
