@@ -32,7 +32,7 @@ class WidVis_Deactivate {
 
 			add_action( 'admin_notices', array( $this, 'deactivation_notice' ) );
 
-			deactivate_plugins( basename( $this->slug ) );
+			deactivate_plugins( $this->slug );
 
 			if ( isset( $_GET['activate'] ) ) {
 				unset( $_GET['activate'] );
