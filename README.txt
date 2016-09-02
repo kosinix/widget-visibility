@@ -3,7 +3,7 @@ Contributors: kosinix
 Donate link: http://www.codefleet.net/donate/
 Tags: widget, visibility, appear
 Requires at least: 3.5
-Tested up to: 4.4.2
+Tested up to: 4.5.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,15 +82,6 @@ GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
 
 == Upgrade Notice ==
 
-= 1.2.0 - 2014-12-18 =
-* Use better codebase.
-* Added top border to differentiate widget visibility controls from the rest of the widget.
-* Added "Widgets" link in the plugins links
-
-= 1.0.1 - 2014-09-28 =
-* Fix notice warnings and typo.
-
-= 1.0.0 - 2014-08-08 =
-* Initial commit.
+See changelog
 
 
