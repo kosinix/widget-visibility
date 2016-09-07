@@ -3,7 +3,7 @@ Contributors: kosinix
 Donate link: http://www.codefleet.net/donate/
 Tags: widget, visibility, appear
 Requires at least: 3.5
-Tested up to: 4.5.3
+Tested up to: 4.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,7 +22,8 @@ Why should you use this plugin?
 * Follows the [WordPress hierarchy](http://codex.wordpress.org/images/1/18/Template_Hierarchy.png) for the visibility logic.
 
 = Link =
-* [Widget Visibility Home Page](http://www.codefleet.net/widget-visibility/)
+* [Widget Visibility](https://www.codefleet.net/widget-visibility/) - Free version home page.
+* [Widget Visibility Pro](https://www.codefleet.net/widget-visibility-pro/) - Pro version with post and productivity enhancements.
 
 = License =
 GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +62,12 @@ GPLv2 or later - http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.3.0 - 2016-09-07 =
+* Tag options now works
+* Refactor with better DI container and services
+* Add info on Pro version
+* Update WP tested version
 
 = 1.2.1 - 2016-02-08 =
 * Tested on WordPress 4.4.2
