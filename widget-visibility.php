@@ -23,7 +23,7 @@ function widvis_init() {
     $plugin['textdomain'] = 'widvis';
     $plugin['view_folder'] = $plugin['path'].'views';
 
-    $plugin['plugin_headers'] = 'cycloneslider_service_plugin_headers';
+    $plugin['plugin_headers'] = 'widvis_service_plugin_headers';
     $plugin['version'] = 'widvis_service_plugin_version';
     $plugin['slug'] = 'widvis_service_plugin_slug';
     $plugin['view'] = new WidVis_View( $plugin['view_folder'] );
